@@ -1,0 +1,188 @@
+
+@media screen and (max-width: 1350px) {
+    
+    .termekek .card {
+        flex-direction: column;
+        align-items: center;
+
+        max-height: fit-content;
+    }
+    
+    
+    .showcaseimgs {
+        width: 100%;
+        height: fit-content;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 740px) {
+    #upperbar .left {
+        min-width: fit-content;
+        max-width: 50%;
+    }
+
+    #upperbar .left .underline_hover {
+        font-size: 25px;
+    }
+
+    #upperbar .right {
+        min-width: fit-content;
+        max-width: 50%;
+    }
+
+    #upperbar .right * {
+        font-size: 20px !important;
+    }
+
+
+
+    #content {
+        padding-top: 60px;
+    }
+
+    .termektype {
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 0px !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: 2px solid var(--red-theme);
+        border-bottom: 2px solid var(--red-theme);
+        min-width: 100% !important;
+
+        margin-top: 150px !important;
+    }
+
+
+
+
+
+
+
+
+    .termekek .card {
+        min-width: 90vw;
+        max-width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: fit-content;
+        min-height: fit-content;
+    }
+
+    
+
+    
+    .card .fo {
+        min-width: 95vw;
+        max-width: 95vw !important;
+    }
+    
+    
+    
+    .termekek img {
+        width: 95vw;
+        height: auto;
+    }
+    
+    
+    .termekek .showcaseimg {
+        max-width: 95vw;
+        max-height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .termekek .showcaseimg img:hover {
+        transform: scale(1.03);
+    }
+    
+    
+    
+    .termekek .title, .card .details {
+        max-width: 85vw !important;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .showcaseimgs {
+        overflow-y: hidden;
+    }
+
+    .showcaseimgs > hr {
+        display: block;
+    }
+    
+    
+    .showcaseimgs > img {
+        width: auto;
+        max-width: 90%;
+        height: auto;
+        max-height: 90%;
+        object-fit: contain;
+    
+        border: 2px solid var(--gray);
+        margin: 0px !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+    
+
+
+
+
+    
+    @keyframes projectgrow {
+        0% {
+            max-width: 95vw;
+        }
+    
+        90% {
+            max-width: 80vw;
+        }
+    
+        100% {
+            max-width: 95vw;
+        }
+    }
+    
+    
+    @keyframes projectshrink {
+        0% {
+            max-width: 95vw;
+        }
+    
+        90% {
+            max-width: 80vw;
+        }
+    
+        100% {
+            max-width: 95vw;
+        }
+    }
+
+
+
+
+
+
+    .card:nth-child(1) {
+        transition-delay: 100ms !important;
+    }
+    .card:nth-child(2) {
+        transition-delay: 100ms !important;
+    }
+    .card:nth-child(3) {
+        transition-delay: 100ms !important;
+    }
+
+}

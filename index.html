@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./imgs/bb.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_otherres.css">
+    <title>Bandi Balta</title>
+</head>
+<body onload="loaded()">
+    <div id="fuggony"></div>
+    <div id="betolto"></div>
+
+
+    <div class="bg">
+        <img src="./imgs/bg.png" id="content-bg">
+        <div id="bgfade"></div>
+    </div>
+
+
+
+    <div id="upperbar">
+        <div class="left">
+            <a href="#homepage" class="cant_select"><img src="./imgs/bb.png"></a>
+            <a href="#homepage" class="underline_hover cant_select" id="upperbar_name">Bandi Balták</a>
+        </div>
+        
+        
+        
+        <div class="right">
+            <a class="underline_hover cant_select" href="#baltak">Balták</a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div id="homepage">
+        <video autoplay muted loop preload="auto">
+            <!-- <source src="./homepagevid.mp4" type="video/mp4"> --> 
+            <source src="https://i.imgur.com/4AGEoJm.mp4" type="video/mp4">
+        </video>
+
+        <h1 id="bbfelirat" class="fonttitle cant_select">Bandi Balták</h1>
+            
+        <a href="#content"><div class="scroll"></div></a>
+    </div>
+
+
+
+
+
+    <div id="content">
+
+        <div class="termektype">
+            <h2 id="baltak"><a href="#baltak" class="underline_hover cant_select">Balták</a></h2>
+        </div>
+
+
+        <div class="termekek">
+    
+
+
+
+
+            <div class="card hidden">
+                <div class="fo">
+                    <div class="showcaseimg">
+                        <img src="./imgs/placeholder.png" alt="Showcase Image">
+                    </div>
+                    <h3 class="title cant_select">Balta 1</h3>
+
+                    <hr>
+
+                    <div class="details">
+                        <p>Leírás</p>
+
+                        <button onclick="showcaseimgs(1)" class="underline_hover">Több kép mutatása</button>
+                        <a href="https://www.jofogas.hu/" target="_blank" rel="noopener noreferrer" class="underline_hover">Megvásárlás</a>
+                    </div>
+                </div>
+
+                <div class="showcaseimgs" id="showcaseimgs-1" style="display: none;">
+                    <hr>
+                    <h3>Képek</h3>
+                    <img src="./imgs/placeholder.png" alt="Showcase Image" loading="lazy">
+                    <img src="./imgs/placeholder.png" alt="Showcase Image" loading="lazy">
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="card hidden">
+                <div class="fo">
+                    <div class="showcaseimg">
+                        <img src="./imgs/placeholder.png" alt="Showcase Image">
+                    </div>
+                    <h3 class="title cant_select">Balta 2</h3>
+
+                    <hr>
+
+                    <div class="details">
+                        <p>Leírás</p>
+
+                        <button onclick="showcaseimgs(2)" class="underline_hover">Több kép mutatása</button>
+                        <a href="https://www.jofogas.hu/" target="_blank" rel="noopener noreferrer" class="underline_hover">Megvásárlás</a>
+                    </div>
+                </div>
+
+                <div class="showcaseimgs" id="showcaseimgs-2" style="display: none;">
+                    <hr>
+                    <h3>Képek</h3>
+                    <img src="./imgs/placeholder.png" alt="Showcase Image" loading="lazy">
+                    <img src="./imgs/placeholder.png" alt="Showcase Image" loading="lazy">
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="card hidden">
+                <div class="fo">
+                    <div class="showcaseimg">
+                        <img src="./imgs/placeholder.png" alt="Showcase Image">
+                    </div>
+                    <h3 class="title cant_select">Balta 3</h3>
+
+                    <hr>
+
+                    <div class="details">
+                        <p>Leírás</p>
+
+                        <button onclick="showcaseimgs(3)" class="underline_hover">Több kép mutatása</button>
+                        <a href="https://www.jofogas.hu/" target="_blank" rel="noopener noreferrer" class="underline_hover">Megvásárlás</a>
+                    </div>
+                </div>
+
+                <div class="showcaseimgs" id="showcaseimgs-3" style="display: none;">
+                    <hr>
+                    <h3>Képek</h3>
+                    <img src="./imgs/placeholder.png" alt="Showcase Image" loading="lazy">
+                    <img src="./imgs/placeholder.png" alt="Showcase Image" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
