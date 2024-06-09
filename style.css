@@ -5,6 +5,7 @@
     --color: white;
     --dark-gray: rgb(20, 20, 20);
     --gray: rgb(50, 50, 50);
+    --light-gray: rgb(100, 100, 100);
     
     --bg-color: rgb(30, 30, 30);
     --red-theme: rgb(100, 0, 0);
@@ -178,6 +179,8 @@ body {
 
 
 
+
+/*
 #betolto #forgo h1 {
     font-size: 150px;
     color: white;
@@ -202,13 +205,57 @@ body {
         transform: rotate(0deg);
     }
 }
+*/
+
+
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 
 
 
 #betolto #betolto_szoveg {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: fit-content;
     justify-content: center;
@@ -217,7 +264,18 @@ body {
     color: var(--color);
 }
 
+#betolto #betolto_szoveg h3 {
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 20px;
+}
 
+#betolto #betolto_szoveg h3::before {
+    content: "(";
+}
+#betolto #betolto_szoveg h3::after {
+    content: ")";
+}
 
 
 
@@ -291,7 +349,7 @@ video {
 
     padding: 10px;
     height: fit-content;
-    max-height: 20%;
+    max-height: 10%;
     min-height: 45px;
 
     width: 100%;
@@ -526,6 +584,73 @@ video {
 
 
 
+
+
+
+
+
+
+
+
+
+#info {
+    position: relative;
+
+    width: fit-content;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 0px;
+    margin-bottom: 50px;
+
+    background-color: var(--dark-gray);
+    border-radius: 20px;
+    border: 2px solid var(--red-underline);
+
+    padding: 30px;
+}
+
+
+#info h1 {
+    margin-bottom: 25px;
+}
+#info h1::before, #info h1::after {
+    content: " ! ";
+    color: red;
+}
+
+
+#info ul {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+
+#info li {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .termektype {
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
@@ -578,7 +703,7 @@ video {
     text-align: center;
 
     min-height: 750px;
-    max-height: 750px;
+    max-height: fit-content;
 
     border-radius: 23px;
     border: 2px solid var(--red-theme);
@@ -621,6 +746,9 @@ video {
 
 .card .fo {
     min-width: 500px;
+    max-width: 500px;
+    border-right: 3px solid white;
+    border-top-right-radius: 22px;
 }
 
 
@@ -669,6 +797,7 @@ video {
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
+    overflow: hidden;
 }
 
 
@@ -742,7 +871,7 @@ video {
 
 
 
-@keyframes projectgrow {
+@keyframes elemgrow {
     0% {
         max-width: 500px;
     }
@@ -761,7 +890,7 @@ video {
 }
 
 
-@keyframes projectshrink {
+@keyframes elemshrink {
     0% {
         max-width: 80%;
     }
@@ -806,4 +935,84 @@ video {
 }
 .card:nth-child(3) {
     transition-delay: 500ms;
+}
+
+
+
+
+
+.card .ar {
+    margin-top: 35px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: var(--light-gray);
+}
+
+.card .ar hr {
+    height: 2px;
+    color: var(--gray);
+    border: none;
+    background-color: var(--gray);
+}
+
+.card .ar .osszeg {
+    font-size: 25px;
+    margin-left: 5px;
+    color: var(--color);
+    font-weight: bolder;
+}
+
+
+
+img:not(.loaded) {
+    image-rendering: pixelated;
+    filter: blur(10px);
+}
+
+img.loaded {
+    image-rendering: auto;
+    filter: blur(0px);
+}
+
+
+
+
+
+
+
+.card .adatok {
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+.card .adatok h2 {
+    font-size: 25px;
+}
+
+.card .adatok hr {
+    height: 2px;
+    color: var(--gray);
+    border: none;
+    background-color: var(--gray);
+}
+
+
+.card .adatok ul {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.card .adatok li {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    height: fit-content;
+}
+
+.card .adatok li .ertek {
+    font-weight: normal;
+    font-size: 20px;
 }

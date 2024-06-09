@@ -11,16 +11,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 let upperbar = document.getElementById("upperbar")
 
 function loaded() {
+    window.scrollTo(0,0)
     let betolto = document.getElementById("betolto")
     betolto.remove()
+    window.scrollTo(0,0)
 
     upperbar.style.display = "none"
 
+
+
     iras("bbfelirat", "eleje")
+    loadimgs()
+    cardheightset()
 }
+
+
+
+
+
+
+const imgs = document.querySelectorAll("img")
+
+function loadimgs() {
+    imgs.forEach(img => {
+        if (img.complete) {
+            loadedimg(img)
+        } else {
+            img.addEventListener("load", loadedimg(img))
+        }
+    })
+}
+
+
+
+function loadedimg(what) {
+    //console.log(what)
+    if (what) {
+        what.classList.add("loaded")
+    }
+}
+
+
+
+
+
+
+
+
+function cardheightset() {
+    if (window.innerWidth >= 1350) {
+        let cards = document.querySelectorAll(".card")
+    
+        cards.forEach(card => {
+            let imginside = card.querySelector(".fo .showcaseimg img")
+            //console.log(imginside)
+    
+            if (imginside.complete) {
+                let foheight = card.querySelector(".fo").clientHeight
+                //console.log(foheight)
+        
+                card.style.maxHeight = foheight + "px"
+            }
+        })
+    } else {
+        let cards = document.querySelectorAll(".card")
+    
+        cards.forEach(card => {
+            card.style.maxHeight = "fit-content"
+        })
+    }
+}
+
+
+
+
+
+
+
 /*------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -49,38 +120,61 @@ window.onscroll = function () {
 
 
 function showcaseimgs(id) {
+    cardheightset()
+    //console.log(id)
     if(id) {
         let div = document.getElementById("showcaseimgs-" + id)
 
-        let parentproject = null
+        let parentelem = null
+        parentelem = document.querySelectorAll(".card")[id - 1]
 
-        
-        parentproject = document.querySelectorAll(".card")[id - 1]
+        let button = parentelem.querySelector("button")
 
 
         if (div) {
-            if (parentproject) {    
+            if (parentelem) {    
                 if (div.style.display == "none") {
                     //mutasd
+                    onshowcaseload("no", parentelem)
 
-                    parentproject.style.animationName = "projectgrow"
-                    parentproject.style.animationPlayState = "running"
+                    parentelem.style.animationName = "elemgrow"
+                    parentelem.style.animationPlayState = "running"
 
                     div.style.display = ""
 
+                    button.innerHTML = "Kevesebb kép mutatása"
+
+
+
                     setTimeout(() => {
-                        parentproject.scrollIntoView({behavior: "smooth"})
+                        onshowcaseload("yes", parentelem)
+                    }, 200)
+
+
+
+                    setTimeout(() => {
+                        parentelem.scrollIntoView({behavior: "smooth"})
                     }, 500)
 
                 } else {
                     //nemutasd
 
-                    parentproject.style.animationName = "projectshrink"
-                    parentproject.style.animationPlayState = "running"
+                    parentelem.style.animationName = "elemshrink"
+                    parentelem.style.animationPlayState = "running"
+
+
+                    button.innerHTML = "Több kép mutatása"
+
 
 
                     setTimeout(() => {
-                        parentproject.scrollIntoView({behavior: "smooth"})
+                        onshowcaseload("no", parentelem)
+                    }, 450)
+
+
+
+                    setTimeout(() => {
+                        parentelem.scrollIntoView({behavior: "smooth"})
                         div.style.display = "none"
                     }, 500)
                 }
@@ -88,6 +182,35 @@ function showcaseimgs(id) {
         }
     }
 }
+
+
+
+
+
+
+function onshowcaseload(tipus, melyik) {
+    if (melyik) {
+        let imgs = melyik.querySelectorAll(".showcaseimgs img")
+    
+    
+        imgs.forEach(img => {
+            if (tipus == "no") {
+                img.style.width = "1px"
+    
+            } else if(tipus == "yes") {
+                if (img.complete) {
+                    img.style.width = "auto"
+                }
+            }
+        })
+    }
+}
+
+
+
+
+
+
 
 
 
